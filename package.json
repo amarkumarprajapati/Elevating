@@ -1,0 +1,20 @@
+{
+  "name": "intal-elevators",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "prebuild": "node scripts/seo.mjs && npx tailwindcss -i styles.css -o public/tailwind.css --minify",
+    "predev": "node scripts/seo.mjs && npx tailwindcss -i styles.css -o public/tailwind.css"
+  },
+  "dependencies": {
+    "next": "^16",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.7.0",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^3.4.19"
+  }
+}

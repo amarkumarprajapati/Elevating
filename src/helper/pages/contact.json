@@ -1,0 +1,25 @@
+{
+  "url": "https://intalelevators.com/contact/",
+  "title": "Contact – Intal Elevators",
+  "heading": "WE WANT TO HEAR FROM YOU",
+  "cta": "Enquire Now",
+  "sections": [
+    {
+      "number": "01",
+      "title": "BEFORE CONTACTING US",
+      "content": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    },
+    {
+      "number": "02",
+      "title": "CONTACT INFORMATION",
+      "email": "intalelevator@gmail.com",
+      "phone": "8007455441",
+      "address": "Opposite 333, Near chatrapati shivaji school, Ulhasnagar -421004, Maharashtra, India."
+    },
+    {
+      "number": "03",
+      "title": "SOCIAL MEDIA",
+      "content": "Social media links section (icons/links)."
+    }
+  ]
+}

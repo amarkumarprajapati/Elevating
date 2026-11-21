@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Premium Dark Navy & Gold Metallic Action Button */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 text-white font-bold px-7 py-3.5 rounded-xl border border-gold-500/50 hover:border-gold-400 shadow-md hover:shadow-xl hover:shadow-navy-950/25 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 tracking-wide;
+  }
+  
+  /* Bright Gold Accent Button for CTAs */
+  .btn-primary-gold {
+    @apply inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-400 via-gold-500 to-amber-500 hover:from-amber-300 hover:to-gold-400 text-navy-950 font-extrabold px-7 py-3.5 rounded-xl border border-amber-300/60 shadow-lg hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 tracking-wide;
+  }
+
+  /* Elegant Glass Outline Button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2.5 border border-white/25 hover:border-gold-400 text-white bg-white/5 hover:bg-white/10 font-bold px-7 py-3.5 rounded-xl transition-all duration-200 backdrop-blur-md hover:-translate-y-0.5 shadow-sm;
+  }
+
+  /* Deep Navy Solid Button */
+  .btn-navy {
+    @apply inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 text-white font-bold px-7 py-3.5 rounded-xl border border-gold-500/40 hover:border-gold-400 shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-500/15 border border-amber-500/30 rounded-full;
+  }
+
+  .badge-gold-dark {
+    @apply inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-gold-400 bg-gold-500/10 border border-gold-500/30 rounded-full;
+  }
+}

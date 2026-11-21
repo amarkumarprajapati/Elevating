@@ -1,0 +1,36 @@
+{
+  "url": "https://intalelevators.com/products/",
+  "title": "Products – Intal Elevators",
+  "elevators": [
+    {
+      "name": "PASSENGER ELEVATOR",
+      "description": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    },
+    {
+      "name": "HOME ELEVATORS",
+      "description": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    },
+    {
+      "name": "CAR ELEVATORS",
+      "description": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    },
+    {
+      "name": "GOODS ELEVATORS",
+      "description": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    },
+    {
+      "name": "STRETCHER ELEVATORS",
+      "description": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    },
+    {
+      "name": "DUMB WAITERS",
+      "description": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    }
+  ],
+  "escalators": [
+    {
+      "name": "ESCALATORS",
+      "description": "Intal Elevators is formed by group of highly experienced vertical transportation professionals with individual experience of around 40 years in India and abroad."
+    }
+  ]
+}
