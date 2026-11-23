@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import SeoHead from '../components/SeoHead';
 import PageHeader from '../components/PageHeader';
-import siteData from '../helper/site.json';
+import siteData from '../data/site.json';
 
 const { pages, website } = siteData;
 const { awards_and_certificates } = pages;
@@ -24,8 +24,8 @@ export default function AwardsAndCertificates() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <span className="badge-gold mb-3">Statutory Credentials</span>
-              <h2 className="font-display text-3xl font-black text-navy-950 tracking-tight mb-6">
+              <span className="badge-blue mb-3">Statutory Credentials</span>
+              <h2 className="font-display text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-6">
                 Registered Elevator Company &amp; Electrical Contractor
               </h2>
               <p className="text-slate-600 leading-relaxed mb-6">
@@ -41,20 +41,20 @@ export default function AwardsAndCertificates() {
                         ✓
                       </div>
                       <div>
-                        <span className="font-bold text-navy-950 text-sm block capitalize">{cred.name.toLowerCase()}</span>
+                        <span className="font-bold text-slate-900 text-sm block capitalize">{cred.name.toLowerCase()}</span>
                         <span className="text-xs text-slate-500 leading-normal">{cred.description}</span>
                       </div>
                     </div>
                   ))}
               </div>
 
-              <Link href="/contact/" className="btn-primary-gold">
+              <Link href="/contact/" className="btn-primary">
                 Request Tender Documentation
               </Link>
             </div>
 
-            <div className="bg-navy-950 rounded-2xl p-10 text-white border-2 border-gold-500/50 shadow-2xl text-center">
-              <div className="w-20 h-20 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center mx-auto mb-6">
+            <div className="bg-gradient-to-br from-primary-900 via-slate-900 to-primary-950 rounded-2xl p-10 text-white border border-primary-500/30 shadow-card text-center">
+              <div className="w-20 h-20 rounded-full bg-primary-800/80 text-primary-300 flex items-center justify-center mx-auto mb-6 border border-primary-600/40">
                 <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
@@ -63,7 +63,7 @@ export default function AwardsAndCertificates() {
               <p className="text-slate-300 text-sm leading-relaxed mb-6">
                 {pages.about_us.mission.description}
               </p>
-              <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-gold-400 font-bold text-xs uppercase tracking-widest border border-gold-500/30">
+              <span className="inline-block px-4 py-2 bg-primary-800/60 rounded-full text-primary-200 font-bold text-xs uppercase tracking-widest border border-primary-500/30">
                 Thane &amp; Maharashtra Region
               </span>
             </div>

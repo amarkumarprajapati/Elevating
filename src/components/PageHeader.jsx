@@ -2,20 +2,20 @@ import Link from 'next/link';
 
 export default function PageHeader({ title }) {
   return (
-    <section className="bg-white py-8 sm:py-10 border-b border-slate-100">
+    <section className="bg-gradient-to-b from-primary-50/60 to-white py-10 sm:py-14 border-b border-slate-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-        <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 mb-2">
-          <Link href="/" className="hover:text-amber-700 transition-colors">
+        <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-500 mb-3">
+          <Link href="/" className="hover:text-primary-600 transition-colors">
             Home
           </Link>
           <span aria-hidden="true" className="text-slate-300">/</span>
-          <span aria-current="page" className="text-slate-700">{title}</span>
+          <span aria-current="page" className="text-primary-800 font-semibold">{title}</span>
         </nav>
 
-        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-950 tracking-tight">
+        <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
           {title}
         </h1>
-        <div aria-hidden="true" className="w-10 h-1 bg-amber-500 mt-3 rounded-full" />
+        <div aria-hidden="true" className="w-12 h-1 bg-primary-600 mt-4 rounded-full" />
       </div>
     </section>
   );

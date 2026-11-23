@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+  body { background: #fcfaf6; color: #292524; }
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -10,31 +11,77 @@
 }
 
 @layer components {
-  /* Premium Dark Navy & Gold Metallic Action Button */
-  .btn-gold {
-    @apply inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 text-white font-bold px-7 py-3.5 rounded-xl border border-gold-500/50 hover:border-gold-400 shadow-md hover:shadow-xl hover:shadow-navy-950/25 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 tracking-wide;
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-primary-600/20 hover:shadow-lg hover:shadow-primary-600/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 tracking-wide;
+  }
+
+  /* Warm Accent / Gold Highlight Button */
+  .btn-gold, .btn-accent {
+    @apply inline-flex items-center justify-center gap-2.5 bg-accent-500 hover:bg-accent-600 text-white font-bold px-6 py-3 rounded-xl shadow-md shadow-accent-500/20 hover:shadow-lg hover:shadow-accent-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 tracking-wide;
   }
   
-  /* Bright Gold Accent Button for CTAs */
   .btn-primary-gold {
-    @apply inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-400 via-gold-500 to-amber-500 hover:from-amber-300 hover:to-gold-400 text-navy-950 font-extrabold px-7 py-3.5 rounded-xl border border-amber-300/60 shadow-lg hover:shadow-xl hover:shadow-amber-500/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 tracking-wide;
+    @apply inline-flex items-center justify-center gap-2.5 bg-primary-600 hover:bg-primary-700 text-white font-bold px-6 py-3 rounded-xl shadow-md shadow-primary-600/25 hover:shadow-lg hover:shadow-primary-600/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 tracking-wide;
   }
 
-  /* Elegant Glass Outline Button */
+  /* Clean White/Light Outline Button */
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2.5 border border-white/25 hover:border-gold-400 text-white bg-white/5 hover:bg-white/10 font-bold px-7 py-3.5 rounded-xl transition-all duration-200 backdrop-blur-md hover:-translate-y-0.5 shadow-sm;
+    @apply inline-flex items-center justify-center gap-2.5 border border-slate-300 hover:border-primary-600 text-slate-700 hover:text-primary-600 bg-white hover:bg-primary-50/50 font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-sm;
   }
 
-  /* Deep Navy Solid Button */
+  /* Outline for dark backgrounds */
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2.5 border border-white/40 hover:border-white text-white bg-white/10 hover:bg-white/20 font-semibold px-6 py-3 rounded-xl transition-all duration-200 backdrop-blur-sm hover:-translate-y-0.5;
+  }
+
+  /* Sleek Secondary / Dark Navy Button */
   .btn-navy {
-    @apply inline-flex items-center justify-center gap-2.5 bg-navy-950 hover:bg-navy-900 text-white font-bold px-7 py-3.5 rounded-xl border border-gold-500/40 hover:border-gold-400 shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200;
+    @apply inline-flex items-center justify-center gap-2.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200;
   }
 
-  .badge-gold {
-    @apply inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-500/15 border border-amber-500/30 rounded-full;
+  .badge-gold, .badge-amber {
+    @apply inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 border border-amber-200/80 rounded-full;
+  }
+
+  .badge-blue {
+    @apply inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-50 border border-primary-200/80 rounded-full;
   }
 
   .badge-gold-dark {
-    @apply inline-flex items-center gap-2 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-gold-400 bg-gold-500/10 border border-gold-500/30 rounded-full;
+    @apply inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-50 border border-primary-200/80 rounded-full;
   }
+}
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  background: #251f1b;
+  color: white;
+}
+.home-hero-photo, .home-hero::after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.home-hero-photo { object-fit: cover; object-position: center 52%; }
+.home-hero::after {
+  content: "";
+  background: linear-gradient(90deg, rgba(28,24,21,.96), rgba(28,24,21,.84) 35%, rgba(28,24,21,.14) 85%);
+}
+.home-hero-copy { padding-block: clamp(4rem, 7vw, 7rem); }
+.hero-location { font-weight: 600; font-size: .875rem; letter-spacing: .12em; text-transform: uppercase; }
+.home-hero h1 { margin: 1.25rem 0; font-size: clamp(3.75rem, 7vw, 7rem); line-height: .98; letter-spacing: -.055em; font-weight: 600; }
+.hero-summary { max-width: 29rem; font-size: 1.125rem; line-height: 1.6; margin-bottom: 2rem; }
+.hero-services { border: 1px solid #c2b6aa; border-radius: .375rem; padding: .75rem 1.5rem; font-weight: 600; }
+.hero-services:hover { background: #ffffff21; }
+.btn-primary, .btn-outline, .btn-navy, .btn-accent { border-radius: .375rem; box-shadow: none; letter-spacing: normal; }
+.product-tile img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: .375rem; }
+.product-tile h3 { text-transform: capitalize; font-size: 1.5rem; letter-spacing: -.035em; font-weight: 600; margin: 1rem 0 .25rem; }
+.catalog-link { color: theme('colors.primary.700'); font-weight: 600; text-decoration: underline; text-underline-offset: .22em; }
+.product-tile:hover h3 { color: theme('colors.primary.700'); }
+@media (max-width: 640px) {
+  .home-hero::after { background: linear-gradient(90deg, rgba(28,24,21,.94), rgba(28,24,21,.72)); }
 }

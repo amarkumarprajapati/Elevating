@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import siteData from '../helper/site.json';
+import siteData from '../data/site.json';
 
 const { website } = siteData;
 
