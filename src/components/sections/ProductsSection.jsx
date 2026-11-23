@@ -1,42 +1,64 @@
 import Link from 'next/link';
-import Block from './ContentBlock';
-import { company as website } from '../../data/data.js';
 
-function getProductImage(headingText) {
-  const lower = headingText.toLowerCase();
-  if (lower.includes('passenger') || lower.includes('passanger')) return '/images/passenger.jpg';
-  if (lower.includes('car')) return '/images/car.jpg';
-  if (lower.includes('escalator')) return '/images/escalator.jpg';
-  if (lower.includes('home')) return '/images/source/2020/11/aditya-chinchure-FRrI46igcqs-unsplash-1024x694-1.jpg';
-  if (lower.includes('goods')) return '/images/source/2020/11/robert-v-ruggiero-BG-iyXjJiLs-unsplash-1024x683-1.jpg';
-  if (lower.includes('stretcher')) return '/images/source/2020/11/simon-rae-3NM3XQ7h1WQ-unsplash-1024x768-1.jpg';
-  if (lower.includes('dumb') || lower.includes('waiter')) return '/images/source/2020/11/bruno-kelzer-dendZhhfkTc-unsplash-1024x683-1.jpg';
-  return '/images/hero.jpg';
-}
+export const featuredProducts = [
+  {
+    title: 'Elevators',
+    description: 'Passenger and goods elevators for every building type – with built-in connectivity and energy-efficient operation as standard.',
+    image: '/images/passenger-lift-light-02.png',
+    query: 'Elevators',
+  },
+  {
+    title: 'Escalators and moving walks',
+    description: 'Eco-efficient and connected escalators for retail, transit, and public environments – designed to reduce energy use, maximize uptime, and deliver smarter people flow.',
+    image: '/images/escalator.jpg',
+    query: 'Escalators and moving walks',
+  },
+  {
+    title: 'Major projects',
+    description: "Expert solutions for the world's most complex and ambitious construction projects.",
+    image: '/images/source/2020/11/robert-v-ruggiero-BG-iyXjJiLs-unsplash-1024x683-1.jpg',
+    query: 'Major projects',
+  },
+];
 
-export default function ProductsSection({ section, featured = false }) {
-  const contact = website.navigation.find(item => item.href === '/contact/')?.href;
+export default function ProductsSection() {
   return (
-    <section className={featured ? 'source-section layout-featured-products featured-products' : 'source-section layout-catalogue'}>
-      <header className="products-header">
-        <p className="kicker-label">What we offer</p>
-        <div className="header-text-group">
-          <h2>Explore our new building solutions</h2>
-          <p className="section-subtext">We have solutions for every project type, building scale, and use case – from affordable residential to the world’s most ambitious structures. All built with connectivity and sustainability at their core.</p>
-        </div>
-      </header>
-      <div className="source-grid">
-        {section.cards.map((card, i) => {
-          const heading = card.find(block => block.type === 'heading');
-          const needsImage = heading && !card.some(block => block.type === 'image');
-          return (
-            <div className="source-card" key={i}>
-              {needsImage && <img className="import-photo" loading="lazy" src={getProductImage(heading.text)} alt="" />}
-              {card.map((block, j) => <Block key={j} block={block} />)}
-              <Link className="catalog-link" href={{ pathname: contact, query: { product: heading?.text || card[0].text } }}>Learn more</Link>
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        {featuredProducts.map((item, i) => (
+          <div key={i} className="flex flex-col group">
+            {/* Card image */}
+            <div className="w-full aspect-[16/10] overflow-hidden bg-slate-100 rounded-sm mb-5">
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+              />
             </div>
-          );
-        })}
+
+            {/* Title */}
+            <h3 className="text-xl sm:text-2xl font-medium tracking-tight text-slate-900 mb-3">
+              {item.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-5 flex-grow">
+              {item.description}
+            </p>
+
+            {/* Action link */}
+            <div>
+              <Link
+                href={{ pathname: '/contact/', query: { product: item.query } }}
+                className="inline-flex items-center gap-1.5 text-sm sm:text-base font-medium text-blue-600 hover:text-blue-700 border-b border-blue-200 hover:border-blue-600 pb-0.5 transition"
+              >
+                <span>Learn more</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
