@@ -1,12 +1,14 @@
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
+import PartnersSection from './sections/PartnersSection';
 import { company } from '../data/data.js';
 
 export default function Layout({
   children,
   title = company.name,
   description = company.tagline,
+  showPartners = true,
 }) {
   const fullTitle = title.includes(company.name) ? title : `${title} – ${company.name}`;
 
@@ -31,6 +33,8 @@ export default function Layout({
       <Header />
 
       <main className="flex-grow">{children}</main>
+
+      {showPartners && <PartnersSection />}
 
       <Footer />
     </div>

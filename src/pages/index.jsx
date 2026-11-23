@@ -35,7 +35,7 @@ export default function Home() {
         <ServicesSection section={serviceSectionData} />
         <ProjectsSection />
 
-        <section aria-labelledby="testimonials-title" className="py-12 sm:py-16 border-t border-slate-200">
+        <section aria-labelledby="testimonials-title" className="py-12 sm:py-16">
           <header className="mb-8">
             <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Testimonials</p>
             <h2 id="testimonials-title" className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
@@ -59,7 +59,7 @@ export default function Home() {
         </section>
 
         {/* Quick Enquiry Section */}
-        <section className="py-12 sm:py-16 border-t border-slate-200">
+        <section className="py-12 sm:py-16">
           <div className="mb-8">
             <p className="text-xs font-bold uppercase tracking-wider text-purple-700 mb-2">
               GET IN TOUCH

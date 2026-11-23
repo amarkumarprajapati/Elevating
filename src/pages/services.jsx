@@ -21,7 +21,7 @@ export default function Services() {
         <ServicesSection section={serviceSectionData} />
 
         {/* Equipment & Workshop Gear */}
-        <section className="py-12 sm:py-16 border-t border-slate-200">
+        <section className="py-12 sm:py-16">
           <div className="mb-8">
             <p className="text-xs font-bold uppercase tracking-wider text-purple-700 mb-2">
               EQUIPMENT & INFRASTRUCTURE

@@ -24,7 +24,7 @@ export default function AboutUs() {
         </div>
 
         {/* Mission & Vision */}
-        <div className="grid md:grid-cols-2 gap-8 pt-12 border-t border-slate-200">
+        <div className="grid md:grid-cols-2 gap-8 pt-12">
           <div className="p-8 rounded-xl bg-slate-50 border border-slate-200">
             <h3 className="text-lg font-bold text-slate-900 mb-3">{aboutUsPage.mission.headline}</h3>
             <p className="text-slate-600 text-sm leading-relaxed">{aboutUsPage.mission.description}</p>
@@ -36,7 +36,7 @@ export default function AboutUs() {
         </div>
 
         {/* Team Section */}
-        <div className="pt-12 border-t border-slate-200">
+        <div className="pt-12">
           <div className="mb-10">
             <p className="text-xs font-bold uppercase tracking-wider text-purple-700 mb-2">
               EXPERIENCE & TALENT

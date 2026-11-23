@@ -2,7 +2,7 @@ import Block from './ContentBlock';
 
 export default function ServicesSection({ section }) {
   return (
-    <section className="py-12 sm:py-16 border-t border-slate-200">
+    <section className="py-12 sm:py-16">
       <div className="mb-8">
         {section.kicker && (
           <p className="text-xs font-bold uppercase tracking-wider text-purple-700 mb-2">
