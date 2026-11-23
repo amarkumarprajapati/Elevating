@@ -1,19 +1,43 @@
-﻿import { homePage } from '../../data/data';
+import Link from 'next/link';
+import { homePage } from '../../data/data';
 
 export default function ProjectsSection() {
   return (
-    <div className="space-y-16 bg-white py-12 sm:py-16">
-      {homePage.projectGroups.map(({ status, projects }) => (
+    <div className="space-y-20 py-16 sm:py-20">
+      {homePage.projectGroups.map(({ status, description, projects }) => (
         <section key={status} aria-label={status + ' projects'}>
-          <h2 className="mb-8 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            {status} <span className="text-purple-700">Projects</span>
-          </h2>
+          <div className="mb-10">
+            <p className="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">
+              {status} PROJECTS
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
+              {status} <span className="text-brand-700">Projects</span>
+            </h2>
+            {description && (
+              <p className="mt-3 max-w-2xl text-slate-600 leading-relaxed">{description}</p>
+            )}
+          </div>
           <div className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
             {projects.map(({ name, progress }) => (
-              <article key={name}>
-                <img src="/images/passenger-lift-light-02.png" alt="" loading="lazy" className="mb-5 aspect-[16/10] w-full rounded-sm object-cover" />
-                <h3 className="text-xl font-medium tracking-tight text-slate-900 sm:text-2xl">{name}</h3>
-                {progress && <p className="mt-3 leading-relaxed text-slate-600">{progress}</p>}
+              <article
+                key={name}
+                className="group rounded-2xl overflow-hidden bg-white border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+                  <img
+                    src="/images/passenger-lift-light-02.png"
+                    alt={name}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full mb-3">
+                    {status}
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-slate-900 mb-2">{name}</h3>
+                  {progress && <p className="text-sm leading-relaxed text-slate-600">{progress}</p>}
+                </div>
               </article>
             ))}
           </div>
