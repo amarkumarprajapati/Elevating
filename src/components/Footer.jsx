@@ -17,7 +17,7 @@ function FooterItem({ text, group }) {
     );
   }
   const menu = company.navigation.find((item) => item.label.toLowerCase() === group.toLowerCase());
-  const href = text === 'Blog' ? '/hello-world/' : menu?.href;
+  const href = menu?.href;
   return href ? (
     <Link href={href} className="hover:text-purple-700 transition">
       {text}
