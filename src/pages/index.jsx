@@ -4,8 +4,6 @@ import ProductsSection from '../components/sections/ProductsSection';
 import ServicesSection from '../components/sections/ServicesSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
 import EnquiryForm from '../components/sections/EnquiryForm';
-import { Phone, Mail, Clock, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
 
 const SERVICES_LIST = [
   {
@@ -98,16 +96,16 @@ export default function Home() {
         {/* Testimonials */}
         <section aria-labelledby="testimonials-title" className="py-16 sm:py-20">
           <header className="mb-10">
-            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-brand-600">Testimonials</p>
+            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Testimonials</p>
             <h2 id="testimonials-title" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
               What our clients say
             </h2>
           </header>
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map(({ title, quote }, index) => (
-              <article key={index} className="rounded-2xl bg-white border border-slate-100 hover:border-slate-200 p-7 shadow-sm hover:shadow-md transition-all duration-300">
+              <article key={index} className="rounded-2xl bg-white border border-slate-200 p-7 shadow-xs hover:shadow-md transition-all duration-300">
                 <header className="flex items-center gap-4 pb-5 mb-5 border-b border-slate-100">
-                  <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-50 font-serif text-3xl text-brand-600">
+                  <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple-50 font-serif text-3xl text-purple-700">
                     &ldquo;
                   </span>
                   <div>
@@ -121,67 +119,41 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Modern Quick Enquiry Section */}
-        <section aria-labelledby="enquiry-section-heading" className="py-16 sm:py-20">
-          <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-navy-900 to-slate-900 text-white p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden">
-            {/* Subtle background glow */}
-            <div className="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 rounded-full bg-brand-500/10 blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+        {/* Clean, Human-Crafted Quick Enquiry Section */}
+        <section aria-labelledby="enquiry-heading" className="py-16 sm:py-20">
+          <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-5">
+              <p className="text-xs font-bold uppercase tracking-wider text-purple-700 mb-2">
+                GET IN TOUCH
+              </p>
+              <h2 id="enquiry-heading" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
+                Enquire Now
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                Have a question about our elevators or need a quote for an installation or maintenance contract? Fill in your details and our team will get in touch with you shortly.
+              </p>
 
-            <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-              {/* Left Column info */}
-              <div className="lg:col-span-5 space-y-6">
+              <div className="space-y-3 text-sm text-slate-700">
                 <div>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-bold uppercase tracking-wider mb-4 border border-brand-500/30">
-                    Quick Assistance
-                  </span>
-                  <h2 id="enquiry-section-heading" className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                    Get an Instant Quote or Consultation
-                  </h2>
-                  <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Have questions about elevator capacity, structural alterations, or AMC pricing? Select your required service and submit your details for an immediate response.
-                  </p>
-                </div>
-
-                {/* Benefits List */}
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center gap-3 text-sm text-slate-200">
-                    <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
-                    <span>Free on-site inspection & technical feasibility</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-200">
-                    <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
-                    <span>Authorized contractor with verified PWD wiremen</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-200">
-                    <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
-                    <span>Fast turnaround & 24/7 emergency repair support</span>
-                  </div>
-                </div>
-
-                {/* Direct Contact Bar */}
-                <div className="pt-6 border-t border-slate-700/60 flex flex-wrap gap-4 text-sm">
-                  <a
-                    href={`tel:${HOME_PAGE_DATA.phone.replace(/\s/g, '')}`}
-                    className="inline-flex items-center gap-2 text-slate-200 hover:text-white transition-colors"
-                  >
-                    <Phone className="w-4 h-4 text-brand-400" />
-                    <span>{HOME_PAGE_DATA.phone}</span>
-                  </a>
-                  <a
-                    href={`mailto:${HOME_PAGE_DATA.email}`}
-                    className="inline-flex items-center gap-2 text-slate-200 hover:text-white transition-colors"
-                  >
-                    <Mail className="w-4 h-4 text-brand-400" />
-                    <span>{HOME_PAGE_DATA.email}</span>
+                  <span className="font-semibold text-slate-900">Phone: </span>
+                  <a href={`tel:${HOME_PAGE_DATA.phone.replace(/\s/g, '')}`} className="text-purple-700 font-medium hover:underline">
+                    {HOME_PAGE_DATA.phone}
                   </a>
                 </div>
+                <div>
+                  <span className="font-semibold text-slate-900">Email: </span>
+                  <a href={`mailto:${HOME_PAGE_DATA.email}`} className="text-purple-700 font-medium hover:underline">
+                    {HOME_PAGE_DATA.email}
+                  </a>
+                </div>
+                <div className="text-slate-500 text-xs pt-1">
+                  Working hours: Monday – Saturday (8:00 AM – 6:00 PM)
+                </div>
               </div>
+            </div>
 
-              {/* Right Column Interactive Form Card */}
-              <div className="lg:col-span-7 bg-white text-slate-900 rounded-2xl p-6 sm:p-9 shadow-xl border border-slate-100">
-                <EnquiryForm />
-              </div>
+            <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-xs">
+              <EnquiryForm />
             </div>
           </div>
         </section>
