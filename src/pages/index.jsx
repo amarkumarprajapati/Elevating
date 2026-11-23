@@ -96,7 +96,6 @@ export default function Home() {
         {/* Testimonials */}
         <section aria-labelledby="testimonials-title" className="py-16 sm:py-20">
           <header className="mb-10">
-            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Testimonials</p>
             <h2 id="testimonials-title" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
               What our clients say
             </h2>

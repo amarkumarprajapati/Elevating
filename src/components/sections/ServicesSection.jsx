@@ -36,26 +36,14 @@ export default function ServicesSection({ section }) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
         <div>
-          {section.kicker && (
-            <p className="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">
-              {section.kicker}
-            </p>
-          )}
+
           <h2 id="services-overview-heading" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
             {section.title || 'What we can do for you'}
           </h2>
-          <p className="mt-2 text-slate-500 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Certified technical solutions, installations, and comprehensive maintenance tailored for residential, commercial, and industrial facilities.
-          </p>
+
         </div>
 
-        <Link
-          href="/services/"
-          className="inline-flex items-center gap-1.5 shrink-0 text-xs sm:text-sm font-bold text-brand-700 hover:text-brand-800 transition-colors uppercase tracking-wider group self-start sm:self-end pb-1"
-        >
-          <span>View all services</span>
-          <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-        </Link>
+
       </div>
 
       {/* Modern Card Grid */}

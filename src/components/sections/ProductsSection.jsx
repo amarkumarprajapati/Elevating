@@ -27,18 +27,13 @@ export const featuredProducts = [
 export default function ProductsSection() {
   return (
     <section aria-labelledby="featured-products-title" className="py-16 sm:py-20">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-3 border-b border-slate-200 gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-3  gap-2">
         <div>
           <h2 id="featured-products-title" className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
             Elevator & Lift Solutions
           </h2>
         </div>
-        <Link
-          href="/products/"
-          className="text-xs font-semibold text-purple-700 hover:text-purple-800 transition uppercase tracking-wider"
-        >
-          View Full Product Catalog →
-        </Link>
+       
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
