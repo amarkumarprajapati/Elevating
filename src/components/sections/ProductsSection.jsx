@@ -29,7 +29,6 @@ export default function ProductsSection() {
     <section aria-labelledby="featured-products-title" className="py-16 sm:py-20">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-3 border-b border-slate-200 gap-2">
         <div>
-          <p className="text-xs font-bold uppercase tracking-wider text-purple-700 mb-1">EQUIPMENT & ENGINEERING</p>
           <h2 id="featured-products-title" className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
             Elevator & Lift Solutions
           </h2>
