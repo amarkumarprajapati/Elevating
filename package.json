@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "prebuild": "node scripts/seo.mjs && npx tailwindcss -i styles.css -o public/tailwind.css --minify",
-    "predev": "node scripts/seo.mjs && npx tailwindcss -i styles.css -o public/tailwind.css"
+    "predev": "node scripts/seo.mjs && npx tailwindcss -i styles.css -o public/tailwind.css",
+    "content:sync": "node scripts/import-content.mjs"
   },
   "dependencies": {
     "next": "^16",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.7.0",
+    "cheerio": "^1.1.2",
     "postcss": "^8.5.33",
     "tailwindcss": "^3.4.19"
   }

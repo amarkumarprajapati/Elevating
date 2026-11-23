@@ -6,14 +6,12 @@ loadEnvConfig(process.cwd());
 
 const origin = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://intalelevators.com').origin;
 
-const routes = [
-  { path: '/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/about-us/', priority: '0.9', changefreq: 'monthly' },
-  { path: '/products/', priority: '0.9', changefreq: 'weekly' },
-  { path: '/services/', priority: '0.9', changefreq: 'weekly' },
-  { path: '/awards-and-certificates/', priority: '0.8', changefreq: 'monthly' },
-  { path: '/contact/', priority: '0.9', changefreq: 'monthly' },
-];
+const source = JSON.parse(fs.readFileSync(new URL('../src/data/source.json', import.meta.url), 'utf8'));
+const routes = Object.values(source.pages).map(page => ({
+  path: new URL(page.url).pathname,
+  priority: new URL(page.url).pathname === '/' ? '1.0' : '0.9',
+  changefreq: 'weekly',
+}));
 
 const today = new Date().toISOString().split('T')[0];
 

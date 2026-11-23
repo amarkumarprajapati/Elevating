@@ -1,0 +1,131 @@
+{
+  "name": "Intal Elevators",
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Us",
+      "href": "/about-us/"
+    },
+    {
+      "label": "Products",
+      "href": "/products/"
+    },
+    {
+      "label": "Services",
+      "href": "/services/"
+    },
+    {
+      "label": "Awards and Certificates",
+      "href": "/awards-and-certificates/"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact/"
+    }
+  ],
+  "details": [
+    "Sunday CLOSED",
+    "MON - SAT 8.00 - 18.00",
+    "Call Us Anytime",
+    "+91 8007455441",
+    "Opposite 333, Near chatrapati shivaji school,",
+    "Ulhasnagar - 421004."
+  ],
+  "copyright": "© 2026 Intal Elevators",
+  "logo": "/images/source/2020/11/Intal-logo.png",
+  "footer": [
+    [
+      {
+        "type": "heading",
+        "text": "CONTACT INFORMATION"
+      },
+      {
+        "type": "text",
+        "text": "intalelevator@gmail.com"
+      },
+      {
+        "type": "text",
+        "text": "Call Us: 8007455441"
+      },
+      {
+        "type": "text",
+        "text": "Opposite 333, Near chatrapati shivaji school, Ulhasnagar - 421004, Maharashtra, India."
+      }
+    ],
+    [
+      {
+        "type": "heading",
+        "text": "About us"
+      },
+      {
+        "type": "text",
+        "text": "History"
+      },
+      {
+        "type": "text",
+        "text": "Our Staff"
+      },
+      {
+        "type": "text",
+        "text": "Our Partners"
+      },
+      {
+        "type": "text",
+        "text": "Blog"
+      }
+    ],
+    [
+      {
+        "type": "heading",
+        "text": "Services"
+      },
+      {
+        "type": "text",
+        "text": "Electrical Contractors"
+      },
+      {
+        "type": "text",
+        "text": "Installations of new lifts"
+      },
+      {
+        "type": "text",
+        "text": "Technical Consultations"
+      },
+      {
+        "type": "text",
+        "text": "Supply of lift components"
+      }
+    ],
+    [
+      {
+        "type": "heading",
+        "text": "Products"
+      },
+      {
+        "type": "text",
+        "text": "Passanger Elevator"
+      },
+      {
+        "type": "text",
+        "text": "Car Elevator"
+      },
+      {
+        "type": "text",
+        "text": "Stretcher Elevator"
+      },
+      {
+        "type": "text",
+        "text": "& more..."
+      }
+    ]
+  ],
+  "attribution": "Powered by Butterfly Themes",
+  "email": "intalelevator@gmail.com",
+  "phone": "+91 8007455441",
+  "tagline": "Intal Elevators is a global supplier of elevator solutions",
+  "hero": "/images/source/2020/11/mahad-aamir-Y-GnrESsjr0-unsplash-1024x819-1.jpg",
+  "enquiry": "Enquire Now"
+}

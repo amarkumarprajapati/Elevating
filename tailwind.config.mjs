@@ -32,8 +32,8 @@ export default {
         gold: colors.amber,
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        display: ['Cabinet Grotesk', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
+        display: ['Arial', 'Helvetica', 'sans-serif'],
       },
       boxShadow: {
         'soft': '0 4px 20px -2px rgba(36, 32, 29, 0.05), 0 2px 6px -1px rgba(36, 32, 29, 0.02)',

@@ -1,18 +1,15 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import siteData from '../data/site.json';
+import website from '../data/company.json';
 
-const { website } = siteData;
+
 
 export default function Header() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = website.navigation_menu.map((item) => ({
-    label: item.label,
-    href: new URL(item.url).pathname,
-  }));
+  const navLinks = website.navigation;
 
   const currentPath = router.asPath.split('?')[0].split('#')[0];
 
@@ -23,10 +20,11 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src="/images/intal-logo.png"
-              alt={website.name}
+              src={website.logo}
+              alt=""
               className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
+            <span className="brand-name">{website.name}</span>
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -38,12 +36,12 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`text-sm font-semibold transition-colors relative py-1 ${
-                    isActive ? 'text-primary-600 font-bold' : 'text-slate-700 hover:text-primary-600'
+                    isActive ? 'text-[var(--accent)] font-bold' : 'text-slate-700 hover:text-[var(--accent)]'
                   }`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary-600 rounded-full" />
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[var(--accent)] rounded-full" />
                   )}
                 </Link>
               );
@@ -52,7 +50,7 @@ export default function Header() {
 
           <div className="hidden lg:flex items-center gap-4">
             <Link href="/contact/" className="btn-primary text-sm py-2.5 px-5">
-              Request a quote
+              {website.enquiry}
             </Link>
           </div>
 
@@ -85,7 +83,7 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-3 py-2.5 rounded-lg text-sm font-semibold ${
-                      isActive ? 'bg-primary-50 text-primary-700 font-bold' : 'text-slate-700 hover:bg-slate-50'
+                      isActive ? 'bg-white text-[var(--accent)] font-bold' : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
                     {item.label}
@@ -98,7 +96,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="btn-primary w-full text-center py-3 text-sm"
                 >
-                  Contact &amp; Request Quote
+                  {website.enquiry}
                 </Link>
               </div>
             </div>

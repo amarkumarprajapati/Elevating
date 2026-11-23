@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function PageHeader({ title }) {
   return (
-    <section className="bg-gradient-to-b from-primary-50/60 to-white py-10 sm:py-14 border-b border-slate-200/70">
+    <section className="interior-header">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <nav aria-label="Breadcrumb" className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-slate-500 mb-3">
           <Link href="/" className="hover:text-primary-600 transition-colors">
