@@ -2,15 +2,21 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 import PartnersSection from './sections/PartnersSection';
-import { company } from '../data/data.js';
+
+const COMPANY = {
+  name: 'Intal Elevators',
+  tagline: 'Intal Elevators is a global supplier of elevator solutions',
+  phone: '+91 8007455441',
+  email: 'intalelevator@gmail.com',
+};
 
 export default function Layout({
   children,
-  title = company.name,
-  description = company.tagline,
+  title = COMPANY.name,
+  description = COMPANY.tagline,
   showPartners = true,
 }) {
-  const fullTitle = title.includes(company.name) ? title : `${title} – ${company.name}`;
+  const fullTitle = title.includes(COMPANY.name) ? title : `${title} – ${COMPANY.name}`;
   const siteUrl = 'https://intalelevators.com';
 
   return (
@@ -31,7 +37,7 @@ export default function Layout({
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={company.name} />
+        <meta property="og:site_name" content={COMPANY.name} />
         <meta property="og:locale" content="en_IN" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fullTitle} />
@@ -45,10 +51,10 @@ export default function Layout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
-              name: company.name,
-              description: company.tagline,
-              telephone: company.phone,
-              email: company.email,
+              name: COMPANY.name,
+              description: COMPANY.tagline,
+              telephone: COMPANY.phone,
+              email: COMPANY.email,
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Opposite 333, Near Chatrapati Shivaji School',

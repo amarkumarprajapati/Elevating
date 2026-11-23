@@ -1,10 +1,31 @@
 import Link from 'next/link';
-import { homePage } from '../../data/data';
+
+const PROJECT_GROUPS = [
+  {
+    status: 'Ongoing',
+    description: 'Projects currently in progress and nearing completion.',
+    projects: [
+      { name: 'Shivalik Lok Dhara Chs', progress: 'First and second phases complete. Third phase nearing completion.' },
+      { name: 'Sky Developers Malad', progress: 'Nearing completion.' },
+    ],
+  },
+  {
+    status: 'Upcoming',
+    description: 'Projects in the pipeline, bringing advanced elevator solutions to more spaces.',
+    projects: [
+      { name: 'Nandi Lok Dhara CHS Kalyan' },
+      { name: 'Ashoka CHS Kalyan' },
+      { name: 'Maimoon CHS Kalyan' },
+      { name: 'Wange Developers Pen' },
+      { name: 'Narayan Developers Pen' },
+    ],
+  },
+];
 
 export default function ProjectsSection() {
   return (
     <div className="space-y-20 py-16 sm:py-20">
-      {homePage.projectGroups.map(({ status, description, projects }) => (
+      {PROJECT_GROUPS.map(({ status, description, projects }) => (
         <section key={status} aria-label={status + ' projects'}>
           <div className="mb-10">
             <p className="text-xs font-bold uppercase tracking-wider text-brand-600 mb-2">

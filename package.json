@@ -8,6 +8,7 @@
     "predev": "npx tailwindcss -i styles.css -o public/tailwind.css"
   },
   "dependencies": {
+    "lucide-react": "^1.78.0",
     "next": "^16",
     "react": "^19",
     "react-dom": "^19"

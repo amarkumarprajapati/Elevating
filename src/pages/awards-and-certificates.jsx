@@ -1,13 +1,13 @@
 import Layout from '../components/Layout';
-import PageHeader from '../components/PageHeader';
-import { awardsAndCertificatesPage } from '../data/data.js';
+
+const AWARDS_PAGE_DATA = {
+  title: 'Awards and Certificates – Intal Elevators',
+};
 
 export default function AwardsAndCertificates() {
   return (
-    <Layout title={awardsAndCertificatesPage.title} description="Awards, certifications, and licenses achieved by Intal Elevators.">
-      <PageHeader title="Awards & Certificates" description="Our accreditations reflect our commitment to safety, quality, and professional excellence." />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <Layout title={AWARDS_PAGE_DATA.title} description="Awards, certifications, and licenses achieved by Intal Elevators.">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <div className="max-w-3xl">
           <p className="text-xs font-bold uppercase tracking-wider text-brand-600 mb-3">
             ACCREDITATIONS & LICENSES

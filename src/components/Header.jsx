@@ -1,14 +1,27 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { company as website } from '../data/data.js';
+
+const WEBSITE = {
+  name: 'Intal Elevators',
+  logo: '/images/source/2020/11/Intal-logo.png',
+  enquiry: 'Enquire Now',
+  navigation: [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about-us/' },
+    { label: 'Products', href: '/products/' },
+    { label: 'Services', href: '/services/' },
+    { label: 'Awards and Certificates', href: '/awards-and-certificates/' },
+    { label: 'Contact', href: '/contact/' },
+  ],
+};
 
 export default function Header() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const navLinks = website.navigation;
+  const navLinks = WEBSITE.navigation;
   const currentPath = router.asPath.split('?')[0].split('#')[0];
 
   useEffect(() => {
@@ -33,14 +46,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <img
-            src={website.logo}
-            alt={website.name + ' logo'}
+            src={WEBSITE.logo}
+            alt={WEBSITE.name + ' logo'}
             width={44}
             height={44}
             className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
           <span className="text-xl font-bold tracking-tight text-slate-900">
-            {website.name}
+            {WEBSITE.name}
           </span>
         </Link>
 
@@ -71,7 +84,7 @@ export default function Header() {
             href="/contact/"
             className="inline-flex items-center justify-center bg-brand-700 hover:bg-brand-800 text-white transition-all duration-200 font-semibold text-sm px-6 py-2.5 rounded-lg shadow-sm hover:shadow-md"
           >
-            {website.enquiry}
+            {WEBSITE.enquiry}
           </Link>
         </div>
 
@@ -123,7 +136,7 @@ export default function Header() {
                 href="/contact/"
                 className="block text-center bg-brand-700 hover:bg-brand-800 text-white py-3 rounded-lg font-semibold text-sm transition-colors"
               >
-                {website.enquiry}
+                {WEBSITE.enquiry}
               </Link>
             </div>
           </div>
