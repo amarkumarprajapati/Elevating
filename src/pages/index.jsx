@@ -33,6 +33,29 @@ export default function Home() {
         <ProductsSection />
         <ServicesSection section={serviceSectionData} />
 
+        <section aria-labelledby="testimonials-title" className="py-12 sm:py-16 border-t border-slate-200">
+          <header className="mb-8">
+            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Testimonials</p>
+            <h2 id="testimonials-title" className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+              What our clients say
+            </h2>
+          </header>
+          <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-1 pb-4 pt-1 lg:grid lg:grid-cols-3">
+            {homePage.testimonials.map(({ title, quote }, index) => (
+              <article key={index} className="w-[86%] max-w-sm shrink-0 snap-start rounded-2xl border border-stone-200 bg-white p-6 shadow-sm lg:w-auto lg:max-w-none">
+                <header className="flex items-center gap-3 border-b border-stone-200 pb-4">
+                  <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple-100 pt-2 font-serif text-4xl text-purple-700">“</span>
+                  <div>
+                    <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
+                    <p className="mt-0.5 text-xs text-slate-500">Client testimonial</p>
+                  </div>
+                </header>
+                <blockquote className="pt-4 text-[15px] italic leading-relaxed text-slate-600">“{quote}”</blockquote>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* Quick Enquiry Section */}
         <section className="py-12 sm:py-16 border-t border-slate-200">
           <div className="mb-8">

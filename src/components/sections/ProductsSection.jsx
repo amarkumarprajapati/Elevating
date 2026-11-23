@@ -23,7 +23,12 @@ export const featuredProducts = [
 
 export default function ProductsSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section aria-labelledby="featured-products-title" className="py-12 sm:py-16 lg:py-20 bg-white">
+      <header className="mb-8">
+        <h2 id="featured-products-title" className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+          Products and project solutions
+        </h2>
+      </header>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
         {featuredProducts.map((item, i) => (
           <div key={i} className="flex flex-col group">

@@ -126,6 +126,10 @@ export const company = {
 };
 
 export const homePage = {
+  testimonials: Array.from({ length: 3 }, () => ({
+    title: 'Responsible!',
+    quote: 'I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.',
+  })),
   title: "Intal Elevators – Intal Elevators",
   about_summary: "Intal Elevators is involved with a variety of electrical works, ranging from Domestic to Industrial Installations and Electrical Contracting. In conjunction to our general electrical work, Intal Elevators has successfully completed larger contracts with and as elevators consultants. We pride ourselves on quality workmanship and service excellence. Intal Elevators is an authorized Elevator company and registered with all relevant authorities. Situated in the Thane, Maharashtra Region we have undertaken major projects throughout District."
 };
