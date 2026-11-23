@@ -1,5 +1,5 @@
-﻿import source from '../data/source.json';
+﻿import { pages } from './data.js';
 
 export function contentProps(slug) {
-  return { props: { page: source.pages[slug], slug } };
+  return { props: { page: pages[slug], slug } };
 }

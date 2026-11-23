@@ -1,13 +1,14 @@
 import fs from 'node:fs';
 import env from '@next/env';
+import { pages } from '../src/data/data.js';
 
 const { loadEnvConfig } = env;
 loadEnvConfig(process.cwd());
 
 const origin = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://intalelevators.com').origin;
 
-const source = JSON.parse(fs.readFileSync(new URL('../src/data/source.json', import.meta.url), 'utf8'));
-const routes = Object.values(source.pages).map(page => ({
+
+const routes = Object.values(pages).map(page => ({
   path: new URL(page.url).pathname,
   priority: new URL(page.url).pathname === '/' ? '1.0' : '0.9',
   changefreq: 'weekly',

@@ -94,14 +94,6 @@ for (const index of sitemap('loc').toArray().map(el => sitemap(el).text()).filte
     }
   }
 }
-const library = [];
-for (let page = 1; ; page++) {
-  const items = JSON.parse(await fetchText(origin + '/wp-json/wp/v2/media?per_page=100&page=' + page + '&_fields=id,source_url,alt_text,mime_type'));
-  for (const item of items) {
-    if (item.mime_type.startsWith('image/')) library.push({ id: item.id, source: item.source_url, src: localImage(item.source_url), alt: item.alt_text });
-  }
-  if (items.length < 100) break;
-}
 const entries = [...media];
 for (let i = 0; i < entries.length; i += 5) {
   await Promise.all(entries.slice(i,i+5).map(async ([url, local]) => {
@@ -115,6 +107,18 @@ shared.email = shared.footer.flat().map(block => block.text).find(text => /^[^\s
 shared.phone = shared.details.find(text => /^\+/.test(text));
 shared.tagline = pages['about-us'].groups.flat().filter(block => block.type === 'heading' && block.text.length > 24)[0]?.text;
 shared.hero = pages.home.groups[0][0].src;
-await fs.writeFile('src/data/company.json', JSON.stringify(shared, null, 2) + '\n');
-await fs.writeFile('src/data/source.json', JSON.stringify({ pages, library }, null, 2) + '\n');
+function declaration(name, value) {
+  const literal = JSON.stringify(value, null, 2).replace(/^( *)"([A-Za-z_$][\w$]*)":/gm, '$1$2:');
+  return `export const ${name} = ${literal};\n`;
+}
+const file = 'src/data/data.js';
+const marker = '// Content updated by content:sync';
+const current = await fs.readFile(file, 'utf8');
+const boundary = current.indexOf(marker);
+if (boundary < 0) throw Error('Missing content sync marker in ' + file);
+const generated = [
+  declaration('company', shared),
+  declaration('pages', pages),
+].join('\n');
+await fs.writeFile(file, current.slice(0, boundary) + marker + '\n' + generated);
 console.log(Object.keys(pages).length + ' pages and posts, ' + media.size + ' unique image files');

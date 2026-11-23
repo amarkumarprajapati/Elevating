@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import company from '../data/company.json';
+import { company } from '../data/data.js';
 
 function FooterItem({ text, group }) {
   if (text === company.email) return <a href={'mailto:' + company.email}>{text}</a>;

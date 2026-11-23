@@ -1,5 +1,5 @@
 ﻿import Head from 'next/head';
-import website from '../data/company.json';
+import { company as website } from '../data/data.js';
 
 export default function SeoHead({ title, description, canonicalUrl }) {
   const origin = new URL(process.env.NEXT_PUBLIC_SITE_URL || canonicalUrl).origin;
