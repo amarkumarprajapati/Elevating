@@ -126,6 +126,27 @@ export const company = {
 };
 
 export const homePage = {
+  projectGroups: [
+    {
+      status: 'Ongoing',
+      description: 'Projects currently in progress and nearing completion.',
+      projects: [
+        { name: 'Shivalik Lok Dhara Chs', progress: 'First and second phases complete. Third phase nearing completion.' },
+        { name: 'Sky Developers Malad', progress: 'Nearing completion.' },
+      ],
+    },
+    {
+      status: 'Upcoming',
+      description: 'Projects in the pipeline, bringing advanced elevator solutions to more spaces.',
+      projects: [
+        { name: 'Nandi Lok Dhara CHS Kalyan' },
+        { name: 'Ashoka CHS Kalyan' },
+        { name: 'Maimoon CHS Kalyan' },
+        { name: 'Wange Developers Pen' },
+        { name: 'Narayan Developers Pen' },
+      ],
+    },
+  ],
   testimonials: Array.from({ length: 3 }, () => ({
     title: 'Responsible!',
     quote: 'I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.',

@@ -4,6 +4,7 @@ import EnquiryForm from '../components/sections/EnquiryForm';
 import { contactPage, company } from '../data/data.js';
 
 export default function Contact() {
+
   const enquiryBlock = {
     fields: [
       { label: 'Your Name (required)', name: 'your-name', type: 'text', required: true },

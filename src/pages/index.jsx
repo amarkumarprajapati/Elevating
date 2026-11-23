@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import HeroSection from '../components/sections/HeroSection';
 import ProductsSection from '../components/sections/ProductsSection';
 import ServicesSection from '../components/sections/ServicesSection';
+import ProjectsSection from '../components/sections/ProjectsSection';
 import EnquiryForm from '../components/sections/EnquiryForm';
 import { homePage, servicesPage, company } from '../data/data.js';
 
@@ -32,6 +33,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ProductsSection />
         <ServicesSection section={serviceSectionData} />
+        <ProjectsSection />
 
         <section aria-labelledby="testimonials-title" className="py-12 sm:py-16 border-t border-slate-200">
           <header className="mb-8">
@@ -44,13 +46,13 @@ export default function Home() {
             {homePage.testimonials.map(({ title, quote }, index) => (
               <article key={index} className="w-[86%] max-w-sm shrink-0 snap-start rounded-2xl border border-stone-200 bg-white p-6 shadow-sm lg:w-auto lg:max-w-none">
                 <header className="flex items-center gap-3 border-b border-stone-200 pb-4">
-                  <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple-100 pt-2 font-serif text-4xl text-purple-700">“</span>
+                  <span aria-hidden="true" className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple-100 pt-2 font-serif text-4xl text-purple-700">&ldquo;</span>
                   <div>
                     <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
                     <p className="mt-0.5 text-xs text-slate-500">Client testimonial</p>
                   </div>
                 </header>
-                <blockquote className="pt-4 text-[15px] italic leading-relaxed text-slate-600">“{quote}”</blockquote>
+                <blockquote className="pt-4 text-[15px] italic leading-relaxed text-slate-600">&ldquo;{quote}&rdquo;</blockquote>
               </article>
             ))}
           </div>
